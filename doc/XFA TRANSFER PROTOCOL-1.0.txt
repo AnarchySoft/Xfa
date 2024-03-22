@@ -1,0 +1,37 @@
+    XfaTP (revision 1.0)
+ ==========================
+
+1. PREAMBLE
+
+  The Xfa Tranfer Protocol (abbr. XfaTP) is a protocol designed to facilitate the
+  direct exchange of Xfa fragments via the Internet. It requires no intermediate
+  server for hosting the files and no P2P connection, as a singular connection between
+  the host machine and the client machine are sufficient for a successful exchange.
+
+2. SECURITY REQUIREMENTS
+
+  The protocol may only work reliably and securely if the integrity of the host can
+  be guaranteed. For this reason, Xfa index files with XfaTP features enabled need
+  to be digitally signed with the PGP key of the host. The same PGP key must be used
+  to establish the connection between host and client. If the PGP signature during
+  the handshake does not match, the client is obligated to reject the connection.
+
+  There is the possibility to create a joined signature directory, which allows any
+  party that belongs to a signature in the directory to establish the connection. In
+  this case, the handshake will not fail. The signature directory itself has to be
+  signed with the key of the primary host, as to prevent any modifications to the
+  directory after creation.
+
+  It is possible to import or export address books of truested parties, which may be
+  embedded into new indexes by default, as to allow any trusted party to redistribute
+  fragments and thereby help increase download speeds or fragment availability. This
+  is usually only helpful for publicly shared index files.
+
+  The hashes of each downloaded fragment will be verified as usual and the download is
+  only considered successful if the hash sums in the index match. Xfa allows cross-index
+  fragment downloads, meaning if a fragment in any index matches the hash sum of the
+  desired index, it may be used instead of the one linked by the original index. This is
+  true under the assumption that every distinct fragment yields a unique hash sum, and
+  that two fragments with equal hash sums are equivalent. Said rule is only discarded in
+  case the file lengths do not match, as this may indicate an intentional denial-of-service
+  attack, functionally equivalent to a zip bomb.

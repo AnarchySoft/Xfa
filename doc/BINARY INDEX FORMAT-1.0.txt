@@ -1,0 +1,20 @@
+NAME: "Xfa Binary Index Format"
+REVISION: 1.0
+
+BYTEORDER: L
+
+SECTION header:
+
+	CONST BYTE[] magic_sequence: ".XFA" + 0x00;
+	CONST U8 version_major: 1;
+	CONST U8 version_minor: 0;
+
+SECTION file_info:
+
+	U16 name_length;
+	BYTE[name_length] file_name;
+
+SECTION fragment_index:
+
+	U32 fragment_count;
+	BYTE[fragment_count][32] fragment_hash;
