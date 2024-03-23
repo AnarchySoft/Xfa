@@ -215,7 +215,7 @@
 				}
 
 				xfa_feed_sha256(sha256, fragment + frag_ptr, next_size);
-				xfa_helper_write_array(frag_file, fragment, read_size);  // TODO: error handling
+				xfa_helper_write_array(frag_file, fragment + frag_ptr, next_size);  // TODO: error handling
 
 				frag_ptr += next_size;
 				frag_left -= next_size;
