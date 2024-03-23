@@ -22,7 +22,7 @@
 
 // Internal constants:
 
-	#define XFA_FRAGMENT_BUFF_SIZE  0x1000000  // 10 MiB
+	#define XFA_FRAGMENT_BUFF_SIZE  0x10000  // 4096 kB
 
 // Functions:
 
@@ -236,6 +236,8 @@
 					frag_left = fragment_size;
 				}
 			}
+
+			frag_ptr = 0;
 		}
 
 		// TODO: add check wether EOF or read error occured
