@@ -1,6 +1,6 @@
 /* xfa/sha256.h
  *
- * Copyright (c) 2024 RandomGuyWithoutY
+ * Copyright (c) 2024 AnarchySoft
  *
  * License: LGPL-3.0-only
  *

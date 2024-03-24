@@ -1,6 +1,6 @@
 /* xfa/helpers/fsys.c (Win32)
  *
- * Copyright (c) 2024 RandomGuyWithoutY
+ * Copyright (c) 2024 AnarchySoft
  *
  * License: LGPL-3.0-only
  *
